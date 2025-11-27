@@ -1,9 +1,16 @@
-import React from 'react'
+import { ReactNode } from "react";
 
-const layout = () => {
-  return (
-    <div>layout</div>
-  )
+interface LayoutProps {
+  children: ReactNode; // tell TS this component can receive children
 }
 
-export default layout
+export default function Layout({ children }: LayoutProps) {
+  return (
+    <div>
+      <header>
+        <h1>My App Header</h1>
+      </header>
+      <main>{children}</main>
+    </div>
+  );
+}
